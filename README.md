@@ -1,11 +1,17 @@
-# RDoctor
-The RChain Doctor
+## RDoctor backend
 
-## TODO
-- Expand this README
+RDoctor is a tool for collecting logs mostly from RChain nodes for debugging.
+This respository contains the backend part.
 
-### Client
-- Record also command line
-- Record also exit code
-- Add _only read from STDIN_ mode (i.e. when no command line is provided)
-- Buffer data on client and handle network failures (hard, but much needed)
+To install it:
+
+1. Install nginx, Docker and docker-compose.
+2. Clone this repository into e.g. `/srv/rdoctor`.
+3. Setup nginx with configuration file in `nginx/`.
+4. Run `run` script from the cloned repository.
+
+You can also use it with systemd with bundled `rdoctor.service`:
+
+    systemd link rdoctor.service
+    systemd enable rdoctor
+    systemd start rdoctor
