@@ -1,0 +1,10 @@
+[Unit]
+Description=RDoctor - RChain Doctor
+After=network.target
+
+[Service]
+ExecStart=/srv/rdoctor/run
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
