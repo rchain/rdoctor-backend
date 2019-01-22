@@ -10,5 +10,5 @@ mkdir -p $RDOCTOR_DATADIR/redis
 chown -R 1000 $RDOCTOR_DATADIR/elasticsearch
 chown -R  999 $RDOCTOR_DATADIR/redis
 
-./build-docker >/dev/null
+./build-docker
 docker-compose up
