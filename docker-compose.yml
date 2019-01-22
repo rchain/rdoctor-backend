@@ -29,6 +29,9 @@ services:
     - ${RDOCTOR_DATADIR}/redis:/data
     ports:
     - 127.0.0.1:6379:6379
+    deploy:
+      restart_policy:
+        delay: 15s
 
   rest-api:
     image: rchain/rdoctor-rest-api
@@ -56,6 +59,9 @@ services:
     depends_on:
     - redis
     - elasticsearch
+    deploy:
+      restart_policy:
+        delay: 15s
     environment:
     - REDIS_URL=redis://rdoctor-redis:6379/0
     - ELASTICSEARCH_URL=http://rdoctor-elasticsearch:9200
