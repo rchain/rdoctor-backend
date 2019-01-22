@@ -3,7 +3,7 @@ Description=RDoctor - RChain Doctor
 After=network.target
 
 [Service]
-ExecStart=/srv/rdoctor/run
+ExecStart=/opt/rdoctor-backend/run
 Restart=always
 
 [Install]

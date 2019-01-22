@@ -1,8 +1,14 @@
 #!/bin/bash -e
 
-export ELASTIC_VERSION=6.5.3
-export RDOCTOR_ROOTDIR=$(readlink -f $(dirname ${BASH_SOURCE:-$0}))
+cd "$(readlink -f $(dirname ${BASH_SOURCE:-$0}))"
 
-cd $RDOCTOR_ROOTDIR
+export ELASTIC_VERSION=6.5.3
+export RDOCTOR_DATADIR=/var/lib/rdoctor
+
+mkdir -p $RDOCTOR_DATADIR/elasticsearch
+mkdir -p $RDOCTOR_DATADIR/redis
+chown -R 1000 $RDOCTOR_DATADIR/elasticsearch
+chown -R  999 $RDOCTOR_DATADIR/redis
+
 ./build-docker >/dev/null
 docker-compose up
