@@ -2,7 +2,7 @@
 
 cd "$(readlink -f $(dirname ${BASH_SOURCE:-$0}))"
 
-export ELASTIC_VERSION=6.5.3
+export ELASTIC_VERSION=6.7.0
 export RDOCTOR_DATADIR=/var/lib/rdoctor
 
 mkdir -p $RDOCTOR_DATADIR/elasticsearch
