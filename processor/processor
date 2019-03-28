@@ -39,7 +39,7 @@ def get_session_info(channel):
         return None
     id_match = identity_regex.match(identity)
     if not id_match:
-        print(f'Invalid identity format: "{id_match}"', file.sys.stderr)
+        print(f'Invalid identity format: "{id_match}"', file=sys.stderr)
         return None
     user_info = { 'name': id_match.group(1) }
     if id_match.group(2):
